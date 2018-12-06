@@ -1,0 +1,10 @@
+.input-container {
+
+  &__input {
+    margin-right: 0.8em;
+    padding: 1em;
+    width: 12rem;
+    border: 1px solid #6f6f6f;
+    font-size: 0.8rem;
+  }
+}
