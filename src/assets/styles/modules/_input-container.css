@@ -2,9 +2,15 @@
 
   &__input {
     margin-right: 0.8em;
+    margin-bottom: 1.2rem;
     padding: 1em;
     width: 12rem;
     border: 1px solid #6f6f6f;
     font-size: 0.8rem;
+  }
+
+  &__btn {
+    font-size: 2rem;
+    vertical-align: middle;
   }
 }
