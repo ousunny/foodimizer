@@ -4,4 +4,35 @@
   border-radius: 0.625rem;
   background-color: $mainGray;
   color: #fff;
+  cursor: pointer;
+
+  &--red-text {
+    color: #e82e2e;
+  }
+
+  &--bg-red {
+    background-color: #e82e2e;
+  }
+
+  &--disabled {
+    background-color: #dadada;
+    cursor: not-allowed;
+  }
+
+  &--shake {
+    transform: translateX(0);
+    animation: shake 0.3s linear;
+
+    @keyframes shake {
+      10%, 90% {
+        transform: translateX(-2px);
+      }
+      20%, 40%, 60%, 80% {
+        transform: translateX(4px);
+      }
+      30%, 50%, 70% {
+        transform: translateX(-4px);
+      }
+    }
+  }
 }
