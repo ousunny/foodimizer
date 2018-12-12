@@ -4,9 +4,8 @@ import ListDisplay from './ListDisplay';
 
 class Randomizer {
   constructor() {
+    this.display = new ListDisplay('food-list', 'food-list__item');
 
-    this.display = new ListDisplay('food-list');
-    this.list = [];
     this.randomizerLength = 3;
 
     this.randomizerText = $('.js-randomizer__text');
@@ -36,8 +35,7 @@ class Randomizer {
   addToList() {
     var trimmedInput = $.trim(this.input.val());
     if (trimmedInput.length > 0) {
-      this.list.push(trimmedInput);
-      this.display.add(trimmedInput, 'food-list__item');
+      this.display.add(trimmedInput);
     } else {
       this.addBtn.addClass('input-container__btn--rotate-shake btn--red-text');
     }
@@ -46,7 +44,7 @@ class Randomizer {
   }
 
   start() {
-    if (this.list.length <= 0) {
+    if (this.display.getList().length <= 0) {
       this.randomizerBtn.addClass('btn--shake btn--bg-red')
       return;
     }
@@ -57,11 +55,13 @@ class Randomizer {
       this.randomizerBtn.prop('disabled', true).addClass('btn--disabled');
       this.input.prop('disabled', true);
       this.addBtn.addClass('input-container__btn--disabled');
+      this.display.setDisable(true);
       if (counter++ >= this.randomizerLength * 20) {
         clearInterval(timer);
         this.randomizerBtn.prop('disabled', false).removeClass('btn--disabled');
         this.input.prop('disabled', false);
         this.addBtn.removeClass('input-container__btn--disabled');
+        this.display.setDisable(false);
         return;
       }
       this.randomize();
@@ -69,7 +69,8 @@ class Randomizer {
   }
 
   randomize() {
-    var randomItem = this.list[Math.floor(Math.random() * this.list.length)];
+    var list = this.display.getList();
+    var randomItem = list[Math.floor(Math.random() * list.length)];
     this.randomizerText.text(randomItem.toString());
   }
 
