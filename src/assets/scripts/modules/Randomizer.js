@@ -1,7 +1,11 @@
 import $ from 'jquery';
 
+import ListDisplay from './ListDisplay';
+
 class Randomizer {
   constructor() {
+
+    this.display = new ListDisplay('food-list');
     this.list = [];
     this.randomizerLength = 3;
 
@@ -11,6 +15,7 @@ class Randomizer {
     this.addBtn = $('.js-input-container__btn');
 
     this.randomizerBtn = $('.js-randomizer-btn');
+
     this.events();
   }
 
@@ -32,6 +37,7 @@ class Randomizer {
     var trimmedInput = $.trim(this.input.val());
     if (trimmedInput.length > 0) {
       this.list.push(trimmedInput);
+      this.display.add(trimmedInput, 'food-list__item');
     } else {
       this.addBtn.addClass('input-container__btn--rotate-shake btn--red-text');
     }
