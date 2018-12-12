@@ -5,7 +5,7 @@
   overflow: scroll;
 
   &__item {
-    margin: 0.1em 0 0.1em 0 0.1em;
+    margin-bottom: 0.1em;
     padding: 0.6em;
     font-size: 1.2em;
     background-color: #efefef;
