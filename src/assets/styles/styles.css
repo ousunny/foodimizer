@@ -8,3 +8,5 @@
 @import 'modules/_title';
 @import 'modules/_randomizer';
 @import 'modules/_input-container';
+
+@import 'modules/_food-list';

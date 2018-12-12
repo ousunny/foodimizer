@@ -1,0 +1,18 @@
+.food-list {
+  height: 25rem;
+  width: 15.625rem;
+  border: 1px solid $mainGray;
+  overflow: scroll;
+
+  &__item {
+    margin: 0.1em 0 0.1em 0 0.1em;
+    padding: 0.6em;
+    font-size: 1.2em;
+    background-color: #efefef;
+
+    &:hover {
+      background-color: $mainGray;
+      color: #fff;
+    }
+  }
+}

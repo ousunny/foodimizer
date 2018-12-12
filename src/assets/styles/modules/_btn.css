@@ -18,6 +18,10 @@
     background-color: #e82e2e;
   }
 
+  &--b-margin {
+    margin-bottom: 1.2em;
+  }
+
   &--disabled {
     background-color: #dadada;
     cursor: not-allowed;
