@@ -1,9 +1,9 @@
 .randomizer {
   margin-bottom: 1.2em;
   padding: 1em;
-  border: 1px solid $mainGray;
   width: 15.625rem;
   height: 3.75rem;
+  text-align: center;
 
   &__text {
     color: #6f6f6f;
